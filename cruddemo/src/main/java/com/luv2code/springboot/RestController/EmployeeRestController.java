@@ -40,19 +40,20 @@ public class EmployeeRestController {
 			}
 			return theEmployee;
 		}
+		//post Api call
 		@PostMapping("/employees")
 		public Employee addEmployee(@RequestBody Employee theEmployee) {
 			theEmployee.setId(0);
 			employService.save(theEmployee);
 			return theEmployee;
 		}
-		//put mapping
+		//put Api call
 		@PutMapping("/employees")
 		public Employee updateEmployee(@RequestBody Employee theEmployee) {
 			employService.save(theEmployee);
 			return theEmployee;
 		}
-		//delete mapping
+		//delete ApI call
 		@DeleteMapping("/employees/{employeeId}")
 		 public String deleteEmployee(@PathVariable int employeeId) {
 		   Employee tempEmployee = employService.findById(employeeId);
